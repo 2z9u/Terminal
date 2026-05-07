@@ -98,25 +98,37 @@ function createHelpBlock() {
     const help = document.createElement('div');
     help.className = 'terminal-content-help';
 
-    const title = document.createElement('span');
-    title.className = 'terminal-content-text';
-    title.style.display = 'block';
-    title.textContent = 'Available commands:';
+    const appendBlock = (headingText, lines) => {
+        const title = document.createElement('span');
+        title.className = 'terminal-content-text';
+        title.style.display = 'block';
+        title.textContent = headingText;
+        help.appendChild(title);
+        for (const line of lines) {
+            const row = document.createElement('span');
+            row.className = 'terminal-content-text';
+            row.style.display = 'block';
+            row.textContent = line;
+            help.appendChild(row);
+        }
+    };
 
-    const lines = [
-        '"help"               Show this help',
+    appendBlock('Available commands:', [
+        '"help"               Show this help (header ? button does the same)',
         '"clear"              Clear the terminal',
-        '"color 1-6"          Change terminal color theme',
-    ];
+        '"color 1-6"          Color preset (1 = default, 2–6 = themes)',
+        '"start"              Open interactive profile menu',
+    ]);
 
-    help.appendChild(title);
-    for (const line of lines) {
-        const row = document.createElement('span');
-        row.className = 'terminal-content-text';
-        row.style.display = 'block';
-        row.textContent = line;
-        help.appendChild(row);
-    }
+    appendBlock('In the start menu:', [
+        '1 about · 2 curiosities · 3 projects',
+        '4 experience · 5 contact · 6 exit',
+        'Any other command closes the menu, then runs normally.',
+    ]);
+
+    appendBlock('Interface:', [
+        'Drag the window from the header (not the buttons).',
+    ]);
 
     return help;
 }
