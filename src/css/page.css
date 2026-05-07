@@ -1,0 +1,193 @@
+#terminal {
+    display: grid;
+    grid-template-areas: 
+    "nav"
+    "main";
+    grid-template-columns: 1fr;
+    grid-template-rows: 3.2rem 1fr;
+    width: var(--width-terminal);
+    height: var(--height-terminal);
+    backdrop-filter: brightness(0.85) blur(10px);
+    border: 1px solid var(--border-details);
+    border-radius: 0.5rem;
+    animation: terminalShow 2s ease-in-out;
+}
+
+#terminal-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 0.5rem);
+    height: calc(100% - 0.5rem);
+    margin: 0.25rem;
+    border-radius: 0.35rem;
+    backdrop-filter: brightness(1.5) blur(5px);
+    background-color: color-mix(in srgb, var(--terminal-header) 50%, transparent);
+    border: 1px solid var(--border-details);
+}
+
+#terminal-header-container {
+    display: grid;
+    grid-template-areas: "icon user buttons";
+    grid-template-columns: 72px 1fr 72px;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0.1rem;
+}
+
+#terminal-header-icon {
+    position: relative;
+    right: 20px;
+    grid-area: icon;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--terminal-text);
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: var(--default-font);
+    user-select: none;
+}
+
+#terminal-header-user {
+    grid-area: user;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--terminal-text);
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: var(--default-font);
+    user-select: none;
+}
+
+#terminal-header-buttons {
+    grid-area: buttons;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    gap: 0.2rem;
+}
+
+.terminal-header-button {
+    width: 45%;
+    height: 95%;
+    border: none;
+    background-color: transparent;
+    border-radius: 0.25rem;
+    color: var(--terminal-text);
+    font-size: 0.8rem;
+    font-weight: 300;
+    font-family: var(--default-font);
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+    user-select: none;
+}
+
+
+.terminal-header-button:hover {
+    background-color: var(--border-details);
+}
+
+.terminal-header-button:active {
+    filter: brightness(1.25);
+}
+
+#terminal-content {
+    display: flex;
+    flex-direction: column;
+    align-content: start;
+    grid-area: main;
+    gap: 0.2rem;
+    width: calc(100% - 0.5rem);
+    height: calc(100% - 0.5rem);
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge Legacy */
+    border: 1px solid var(--border-details);
+    border-radius: 0.5rem;
+    background-color: color-mix(in srgb, var(--terminal-content) 85%, transparent);
+    margin: 0.25rem;
+    padding: 1rem;
+}
+
+#terminal-content::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.terminal-row {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.2rem;
+    width: 100%;
+}
+
+.terminal-content-text {
+    color: var(--terminal-text);
+    font-size: 0.75rem;
+    font-weight: 300;
+    font-family: var(--terminal-font);
+    user-select: none;
+}
+
+.terminal-content-input {
+    position: relative;
+    height: 1rem;
+    border: none;
+    background-color: transparent;
+    color: var(--terminal-text);
+    font-size: 0.75rem;
+    font-weight: 300;
+    font-family: var(--terminal-font);
+    transition: all 0.15s ease-in-out;
+    z-index: 10;
+    width: 100%;
+}
+
+.terminal-content-input::selection {
+    background-color: var(--user-select);
+}
+
+.terminal-content-error {
+    color: var(--terminal-error);
+    font-size: 0.75rem;
+    font-weight: 300;
+    font-family: var(--terminal-font);
+    user-select: none;
+}
+
+.terminal-start-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(3, auto);
+    gap: 0.35rem 0.75rem;
+    width: 100%;
+}
+
+.terminal-start-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0.35rem 0;
+}
+
+.terminal-start-menu-item {
+    padding: 0.35rem 0.5rem;
+    border: 1px solid var(--border-details);
+    border-radius: 0.35rem;
+    background-color: color-mix(in srgb, var(--terminal-content) 70%, transparent);
+}
+
+.terminal-start-menu-obs {
+    opacity: 0.85;
+    margin-top: 0.1rem;
+}
