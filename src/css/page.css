@@ -1,4 +1,6 @@
 #terminal {
+    --terminal-drag-x: 0;
+    --terminal-drag-y: 0;
     display: grid;
     grid-template-areas: 
     "nav"
