@@ -13,6 +13,7 @@
     border: 1px solid var(--border-details);
     border-radius: 0.5rem;
     animation: terminalShow 2s ease-in-out;
+    transform: translate(var(--terminal-drag-x), var(--terminal-drag-y));
 }
 
 #terminal-header {
