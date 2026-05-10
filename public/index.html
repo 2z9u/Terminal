@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../src/assets/fastsh64-branding/fastsh_border_blue.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/css/animations.css">
+    <link rel="stylesheet" href="../src/css/page.css">
+    <link rel="stylesheet" href="../src/css/presets.css">
+    <link rel="stylesheet" href="../src/css/themes.css">
+    <title>FastSH</title>
+</head>
+<body>
+    <div id="page-background-stack" aria-hidden="true">
+        <div class="page-bg-layer is-active"></div>
+        <div class="page-bg-layer"></div>
+    </div>
+    <main id="terminal">
+        <header id="terminal-header">
+            <div id="terminal-header-container">
+                <div id="terminal-header-icon">&gt;<span class="pulse">_</span></div>
+                <div id="terminal-header-user">
+                    <span id="terminal-header-user-label" aria-label="my git: 2z9t">default:2z9u</span>
+                </div>
+                <div id="terminal-header-buttons">
+                    <button type="button" class="terminal-header-button" id="terminal-header-buttons-help">?</button>
+                    <button type="button" class="terminal-header-button" id="terminal-header-buttons-close">X</button>
+                </div>
+            </div>
+        </header>
+        <section id="terminal-content">
+        </section>
+    </main>
+    <script src="../src/js/terminal.js" defer></script>
+</body>
+</html>
